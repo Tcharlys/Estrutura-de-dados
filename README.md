@@ -1,3 +1,3 @@
 # Estrutura-de-dados
 
-algoritmis de estrutura de dados I
+algorítmos de estrutura de dados I
