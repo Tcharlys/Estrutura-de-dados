@@ -13,16 +13,16 @@ void preenche(int quant_funcionario, Funcionario *v_funcionario){
 
     for ( i = 0; i < quant_funcionario; i++)
     {
-        printf("Digite o nome do funcionario\n");
+        printf("\nDigite o nome do funcionario %d\n", i+1);
         scanf(" %[^\n]s", v_funcionario[i].nome);
 
-        printf("Digite o salariodo funcionario\n");
+        printf("\nDigite o salariodo funcionario\n");
         scanf(" %f", &v_funcionario[i].salario);
 
-        printf("Digite o identificador do funcionario\n");
+        printf("\nDigite o identificador do funcionario\n");
         scanf(" %d", &v_funcionario[i].identificador);
 
-        printf("Digite o cargo do funcionario\n");
+        printf("\nDigite o cargo do funcionario\n");
         scanf(" %[^\n]s", v_funcionario[i].cargo);
 
     }
@@ -34,20 +34,32 @@ void imprimi(int quant_funcionario, Funcionario *v_funcionario){
 
     for ( j = 0; j < quant_funcionario; j++)
     {
-        printf("Nome do funcionario %s\n", v_funcionario[j].nome);
+        prinf("\n\tExibindo dados recebidos...\n");
+        printf("\nNome do funcionario\t%s\n", v_funcionario[j].nome);
     
-        printf("Salariodo funcionario %f\n", v_funcionario[j].salario);
+        printf("\nSalario do funcionario\t%f\n", v_funcionario[j].salario);
 
-        printf("Identificador do funcionari n %d\n", v_funcionario[j].identificador);
+        printf("\nIdentificador do funcionario\t%d\n", v_funcionario[j].identificador);
 
-        printf("Cargo do funcionario %s\n", v_funcionario[j].cargo);  
+        printf("\nCargo do funcionario\t%s\n", v_funcionario[j].cargo);  
     }
 
+}
+
+void altera_salario(int quant_funcionario, Funcionario *v_funcionario){
+    int index;
+    
+    for ( index = 0; index < quant_funcionario; index++)
+    {
+        printf("\nDigite o reajuste do salario:\n");
+        scanf(" %f", &v_funcionario[index].salario);
+    }
 }
 
 int main(void){
 
     int quant_funcionario;
+    char resposta;
 
     printf("Digite a quantidade de funcionarios suas empresa possui\n");
     scanf(" %d", &quant_funcionario);
@@ -62,6 +74,9 @@ int main(void){
 
     preenche(quant_funcionario, v_funcionario);
     imprimi(quant_funcionario, v_funcionario);
+    altera_salario(quant_funcionario, v_funcionario);
 
+    free(v_funcionario);
+    
     return 0;
 }

@@ -34,6 +34,7 @@ void imprimi(int quant_funcionario, Funcionario *v_funcionario){
 
     for ( j = 0; j < quant_funcionario; j++)
     {
+        prinf("\n\tExibindo dados recebidos...\n");
         printf("Nome do funcionario %s\n", v_funcionario[j].nome);
     
         printf("Salariodo funcionario %f\n", v_funcionario[j].salario);
@@ -62,6 +63,8 @@ int main(void){
 
     preenche(quant_funcionario, v_funcionario);
     imprimi(quant_funcionario, v_funcionario);
+
+    free(v_funcionario);
 
     return 0;
 }

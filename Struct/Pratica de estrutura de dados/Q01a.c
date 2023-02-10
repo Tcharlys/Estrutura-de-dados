@@ -40,5 +40,7 @@ int main(void){
 
     preenche(quant_funcionario, &v_funcionario);
 
+    free(v_funcionario);
+
     return 0;
 }
